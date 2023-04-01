@@ -1,0 +1,117 @@
+
+
+body{
+	background-image: url("https://i.pinimg.com/originals/ee/7d/bc/ee7dbc369fd1cf1cce4714002480a8ad.jpg");
+	background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+	min-height:100vh;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+h3{
+    position: relative;
+    font-size: 5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+}
+h3::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+
+    height: 100%;
+    color: #4fed51;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #116e12;
+    overflow: hidden;
+    animation: animate 2s linear infinite;
+    -webkit-animation: animate 2s linear infinite;
+}
+@keyframes animate{
+    0%{
+        width: 0;
+    }
+    70%{
+        width: 100%;
+    }
+}
+
+
+
+input[type="submit"]{
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+}
+
+input:not(:placeholder-shown) + input[type="submit"]{
+    visibility: visible;
+    cursor: pointer;
+    opacity: 1;
+    
+}
+
+.text-center{
+	color:#fff;	
+    margin: -50px 0 80px 0;
+    display: block;
+    text-align: center;
+}
+.container{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+    background: linear-gradient(50deg,#0a0a0ad8, #2e2e2ee3, #0a0a0ad8);
+	border-radius:6px;
+	padding:70px 100px;
+}
+
+
+label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
+	transition: all 0.5s ease-in-out;
+    padding: 10px;
+}
+input{ 
+    display: grid;
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width:100%;
+    padding:10px;
+    font-size:16px;
+    color:#fff;
+}
+input:focus{ 
+    border:none;	
+    outline:none;
+    border-bottom:1px solid #2fe63e;	
+}
+.btn{
+    background-image: linear-gradient(to right, #083604,#1b6e10, #4ab646 , #1b6e10 , #083604);
+	color:#fff;
+	outline: none;
+    border: 0;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:6px;
+	cursor:pointer;
+	position:relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover{
+    background-image: linear-gradient(to right, #083604,#1b6e10, #4ab646 , #1b6e10 , #083604);
+    box-shadow: rgb(2, 34, 7) 0px 5px 0px 0px;
+    transform: translateY(-2px);
+}
