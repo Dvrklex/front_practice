@@ -38,23 +38,16 @@ if (window.wallpaperRegisterAudioListener) {
 }
 const eqBars = document.querySelectorAll(".eq-bar");
 
-function updateEQ(volumeArray) {
-  eqBars.forEach((bar, i) => {
-    const v = volumeArray[i % volumeArray.length];
-    const height = Math.max(4, v * 80);
-    bar.style.height = height + "px";
-  });
-}
-
 if (window.wallpaperRegisterAudioListener) {
-  window.wallpaperRegisterAudioListener(data => {
-    updateEQ(data);
-  });
-} else {
-  // Mock para CodePen
-  setInterval(() => {
-    eqBars.forEach(bar => {
-      bar.style.height = (Math.random() * 80 + 4) + "px";
+  window.wallpaperRegisterAudioListener(function (audioArray) {
+
+    // DEBUG opcional (borrar luego)
+    // console.log(audioArray[0]);
+
+    eqBars.forEach((bar, i) => {
+      const v = audioArray[i % audioArray.length];
+      const height = Math.max(6, v * 90);
+      bar.style.height = height + "px";
     });
-  }, 120);
+  });
 }
